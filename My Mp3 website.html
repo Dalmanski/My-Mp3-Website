@@ -7,12 +7,53 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://images.wallpapersden.com/image/download/cool-space-forest_bmVlaWaUmZqaraWkpJRobWllrWdma2U.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
             color: #333;
             margin: 0;
             padding: 0;
+            background-image: url('https://www.technocrazed.com/wp-content/uploads/2015/12/HD-Space-Wallpaper-For-Background-40.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden; /* Hide scrollbars during animation */
+            animation: scrollBackground 50s linear infinite;
+        }
+
+        @keyframes scrollBackground {
+            from {
+                background-position: 0% 0%; /* Start position */
+            }
+            to {
+                background-position: 100% 0%; /* End position */
+            }
+        }
+
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
 
         header {
@@ -21,7 +62,13 @@
             padding: 20px 20px 20px 0;
             display: flex;
             justify-content: space-between;
-            align-items: center; 
+            align-items: center;
+            transition: background-color 0.5s ease, transform 0.5s ease;
+            animation: slideDown 0.5s ease forwards;
+        }
+
+        header:hover {
+            background-color: #000000e6; /* Change background color on hover */
         }
 
         /* Inside the Header */
@@ -64,6 +111,7 @@
 
         section {
             padding: 20px;
+            animation: slideIn 0.5s ease forwards;
         }
 
         section h2 {
@@ -80,6 +128,8 @@
             color: white;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s forwards; 
+            animation-delay: 0.5s; 
         }
 
         .song img {
@@ -91,6 +141,7 @@
         .song h2 {
             text-align: center;
             margin-top: 0;
+            font-weight: normal; /* Unbold */
         }
 
         .song p {
@@ -104,7 +155,14 @@
         footer {
             text-align: center; 
             color: white;
+            animation: fadeIn 1s forwards; /* Add fadeIn animation */
+            animation-delay: 1s; /* Add delay for smooth transition */
         } 
+
+        a { /* For link */
+            color: yellow;
+        }
+
     </style>
 </head>
 <body>
@@ -118,16 +176,27 @@
         </nav>
     </header>
     <section>
-        <div class="song">
+        
+        <div class="song fade-in">
             <h2>My best music:</h2>
             <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/969130507&color=%235a6970&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/xxdalmanskixx-gd" title="Dalmanski" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski</a> · <a href="https://soundcloud.com/xxdalmanskixx-gd/dalmanski-kawaii-x" title="Dalmanski - Kawaii X" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski - Kawaii X</a></div>
-            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/686001322&color=%23080808&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/xxdalmanskixx-gd" title="Dalmanski" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski</a> · <a href="https://soundcloud.com/xxdalmanskixx-gd/dalmanski-sunrise" title="Dalmanski - Sunrise" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski - Sunrise</a></div>
             <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1124965063&color=%23080808&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/xxdalmanskixx-gd" title="Dalmanski" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski</a> · <a href="https://soundcloud.com/xxdalmanskixx-gd/dalmanski-when" title="Dalmanski - When" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski - When</a></div>
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/686001322&color=%23080808&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/xxdalmanskixx-gd" title="Dalmanski" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski</a> · <a href="https://soundcloud.com/xxdalmanskixx-gd/dalmanski-sunrise" title="Dalmanski - Sunrise" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski - Sunrise</a></div>
             <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/634003404&color=%235a6970&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/xxdalmanskixx-gd" title="Dalmanski" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski</a> · <a href="https://soundcloud.com/xxdalmanskixx-gd/dalmanski-destiny" title="Dalmanski - Destiny" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski - Destiny</a></div>
-            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/664201379&color=%23080808&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/xxdalmanskixx-gd" title="Dalmanski" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski</a> · <a href="https://soundcloud.com/xxdalmanskixx-gd/dalmanski-altruism" title="Dalmanski - Altruism" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski - Altruism</a></div>
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/768904618&color=%23080808&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/xxdalmanskixx-gd" title="Dalmanski" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski</a> · <a href="https://soundcloud.com/xxdalmanskixx-gd/dalmanski-alive" title="Dalmanski - Alive" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski - Alive</a></div>
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/734042500&color=%23080808&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/xxdalmanskixx-gd" title="Dalmanski" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski</a> · <a href="https://soundcloud.com/xxdalmanskixx-gd/dalmanski-delightful" title="Dalmanski - Delightful" target="_blank" style="color: #cccccc; text-decoration: none;">Dalmanski - Delightful</a></div>
+            <h2>Visit my other music, there's lot of em:  <a href ="https://soundcloud.com/xxdalmanskixx-gd">My Soundcloud Page</a></h2>
+        </div>
     </section>
-    <footer>
+    <footer class="fade-in">
         <p>&copy; 2024 My MP3 Website by Jayrald John Dalman. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Remove overflow hidden after animations and on scroll up/down
+        document.body.addEventListener('animationend', function() {
+            document.body.style.overflow = 'auto';
+        });
+    </script>
 </body>
 </html>
